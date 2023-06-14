@@ -10,6 +10,7 @@ The [Hangman](<https://en.wikipedia.org/wiki/Hangman_(game)>) game is a simple g
 -Terminal
 
 ## How to play
-The game starts by running python main.py in the terminal>
+The game starts by running python main.py in the terminal.
+
 And, have fun ~!
 

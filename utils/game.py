@@ -41,8 +41,6 @@ class Hangman:
                     self.wrongly_guessed_letters.append(user_input)
 
 
-
-
     def input_check(self, value):
         """
         Function to check if the input from the user is a letter and returns a boolean
@@ -79,7 +77,7 @@ class Hangman:
         print("Game over...")
     
     def well_played(self):
-        """Function that would congrat the player if they win"""
+        """Function to print out message for the player if they win"""
         word = "".join(self.word_to_find)
         print(f"You found the word '{word}' in {self.turn_count} turns with {self.error_count} errors!")
     

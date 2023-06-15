@@ -21,7 +21,7 @@ class Hangman:
         - check if the input is valid
         - check if the guessed letter is correct or wrong
         """
-        user_input = input("please enter a letter: ")
+        user_input = input("\nPlease enter a letter: ")
         if self.input_check(user_input):
             self.turn_count += 1
             # when player guessed the right letter, and it doesn't exist already in the correctly_gussed letters, replace the "_" with the correct letter

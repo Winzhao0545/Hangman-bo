@@ -14,7 +14,7 @@ class Hangman:
         self.error_count = 0
 
     
-    def play(self):
+    def _play(self):
         """
         Function that would :
         - ask player to enter a letter
@@ -22,7 +22,7 @@ class Hangman:
         - check if the guessed letter is correct or wrong
         """
         user_input = input("\nPlease enter a letter: ")
-        if self.input_check(user_input):
+        if self._input_check(user_input):
             self.turn_count += 1
             # when player guessed the right letter, and it doesn't exist already in the correctly_gussed letters, replace the "_" with the correct letter
             if user_input.lower() in self.word_to_find and user_input.lower() not in self.correctly_guessed_letters:
@@ -41,7 +41,7 @@ class Hangman:
                     self.wrongly_guessed_letters.append(user_input)
 
 
-    def input_check(self, value):
+    def _input_check(self, value):
         """
         Function to check if the input from the user is a letter and returns a boolean
         """
@@ -63,20 +63,20 @@ class Hangman:
         """
         print("Hello, welcome to this hangman game!")
         while True:
-            self.play()
+            self._play()
             print(f"Correctly guessed letters: {self.correctly_guessed_letters}\nWrongly guessed letters: {self.wrongly_guessed_letters}\nYour life :{self.lives}\nYour error counts:{self.error_count}\nYour turn counts: {self.turn_count}")
             if self.lives == 0:
-                self.game_over()
+                self._game_over()
                 break
             elif self.correctly_guessed_letters == self.word_to_find:
-                self.well_played()
+                self._well_played()
                 break
 
-    def game_over(self):
+    def _game_over(self):
         """Function that would stop the game once the player fails in guessing the correct word"""
         print("Game over...")
     
-    def well_played(self):
+    def _well_played(self):
         """Function to print out message for the player if they win"""
         word = "".join(self.word_to_find)
         print(f"You found the word '{word}' in {self.turn_count} turns with {self.error_count} errors!")
